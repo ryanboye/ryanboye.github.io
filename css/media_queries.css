@@ -1,0 +1,24 @@
+@media (max-height: 750px) {
+  #focus {
+    padding-top: 10%; } }
+@media (max-width: 1200px) {
+  #focus {
+    padding-top: 15%;
+    font-size: 1em;
+    line-height: 1.6em; } }
+@media (max-width: 400px) {
+  #focus p {
+    padding: 0 10px; }
+
+  #focus, .skills {
+    font-size: .7em;
+    line-height: 2em; }
+
+  .underline {
+    padding: 4px 5px;
+    border-radius: 2px; }
+
+  .skills li {
+    padding: 5px 10px;
+    margin: 0 5px 5px 0;
+    border-radius: 3px; } }
