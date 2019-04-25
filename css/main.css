@@ -493,14 +493,15 @@ section:first-child {
 .post-list-mini {
   overflow: auto;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin: 0; }
   .post-list-mini .case-study:first-child {
     width: 30%; }
   .post-list-mini .case-study {
     width: 30%;
     margin-bottom: 75px;
-    margin-right: 4%;
-    flex: 1 1 30%; }
+    padding: 20px;
+    flex: 1 1 40%; }
     .post-list-mini .case-study:nth-child(4) {
       margin-right: 0; }
     .post-list-mini .case-study .case-study__thumbnail {
