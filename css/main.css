@@ -416,6 +416,16 @@ h1 {
   color: #000000;
   font-weight: 900; }
 
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 40px; }
+
+  h2 {
+    font-size: 30px; }
+
+  .result {
+    width: 100%;
+    margin-bottom: 30px; } }
 .nav {
   padding: 15px 0; }
   .nav a {
@@ -434,7 +444,7 @@ h1 {
     color: white; }
 
 h2 {
-  font-family: Rubik-Bold;
+  font-family: "Rubik";
   font-size: 40px;
   color: #000000; }
 
@@ -451,12 +461,12 @@ h2 {
       opacity: 0.9;
       transition: opacity 0.5s; }
   .case-study h3 {
-    font-family: Rubik-Bold;
+    font-family: "Rubik";
     font-size: 30px;
     color: #000000;
     margin-top: 0.5em; }
   .case-study p {
-    font-family: Rubik-Regular;
+    font-family: "Rubik";
     font-size: 24px;
     color: #626262; }
 
@@ -468,7 +478,7 @@ section:first-child {
 
 .case-study-page h2 {
   margin-top: 2em;
-  font-family: Rubik-Bold;
+  font-family: "Rubik";
   font-size: 40px;
   color: #000000; }
 .case-study-page img {
@@ -507,12 +517,12 @@ section:first-child {
     .post-list-mini .case-study .case-study__thumbnail {
       display: block; }
     .post-list-mini .case-study h3 {
-      font-family: Rubik-Bold;
+      font-family: "Rubik";
       font-size: 30px;
       color: #000000;
       margin-top: 0.5em; }
     .post-list-mini .case-study p {
-      font-family: Rubik-Regular;
+      font-family: "Rubik";
       font-size: 24px;
       color: #626262; }
 
