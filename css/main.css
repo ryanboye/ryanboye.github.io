@@ -557,8 +557,6 @@ img {
 
 /* Results Section */
 .result {
-  width: 33%;
-  float: left;
   text-align: center;
   /* overflow: auto; */ }
 
@@ -692,7 +690,7 @@ button.cta-dark:hover {
   border-radius: 4px;
   transition: 0.2s all; }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 767px) {
   h1 {
     font-size: 40px; }
 
@@ -705,4 +703,21 @@ button.cta-dark:hover {
 
   .post-list-mini .case-study {
     width: 100%;
-    flex: 1 1 100%; } }
+    flex: 1 1 100%; }
+
+  br {
+    display: none; }
+
+  .case-study {
+    width: 100%;
+    margin-bottom: 50px; }
+
+  .post-list-mini .case-study {
+    margin-bottom: 0; }
+
+  header.hero.row.contact {
+    text-align: center; }
+
+  header.hero.row.contact img {
+    max-width: 200px;
+    margin: 0 auto; } }
