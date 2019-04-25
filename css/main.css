@@ -411,21 +411,11 @@ body {
   padding: 100px 0; }
 
 h1 {
-  font-family: Rubik;
+  font-family: "Rubik";
   font-size: 60px;
   color: #000000;
   font-weight: 900; }
 
-@media only screen and (max-width: 600px) {
-  h1 {
-    font-size: 40px; }
-
-  h2 {
-    font-size: 30px; }
-
-  .result {
-    width: 100%;
-    margin-bottom: 30px; } }
 .nav {
   padding: 15px 0; }
   .nav a {
@@ -445,6 +435,7 @@ h1 {
 
 h2 {
   font-family: "Rubik";
+  font-weight: bold;
   font-size: 40px;
   color: #000000; }
 
@@ -462,11 +453,13 @@ h2 {
       transition: opacity 0.5s; }
   .case-study h3 {
     font-family: "Rubik";
+    font-weight: bold;
     font-size: 30px;
     color: #000000;
     margin-top: 0.5em; }
   .case-study p {
     font-family: "Rubik";
+    font-weight: 400;
     font-size: 24px;
     color: #626262; }
 
@@ -479,6 +472,7 @@ section:first-child {
 .case-study-page h2 {
   margin-top: 2em;
   font-family: "Rubik";
+  font-weight: bold;
   font-size: 40px;
   color: #000000; }
 .case-study-page img {
@@ -518,11 +512,13 @@ section:first-child {
       display: block; }
     .post-list-mini .case-study h3 {
       font-family: "Rubik";
+      font-weight: bold;
       font-size: 30px;
       color: #000000;
       margin-top: 0.5em; }
     .post-list-mini .case-study p {
       font-family: "Rubik";
+      font-weight: 400;
       font-size: 24px;
       color: #626262; }
 
@@ -695,3 +691,14 @@ button.cta-dark:hover {
   border: 1px solid white;
   border-radius: 4px;
   transition: 0.2s all; }
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 40px; }
+
+  h2 {
+    font-size: 30px; }
+
+  .result {
+    width: 100%;
+    margin-bottom: 30px; } }
