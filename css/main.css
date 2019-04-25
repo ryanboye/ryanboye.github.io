@@ -692,7 +692,7 @@ button.cta-dark:hover {
   border-radius: 4px;
   transition: 0.2s all; }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   h1 {
     font-size: 40px; }
 
@@ -701,4 +701,8 @@ button.cta-dark:hover {
 
   .result {
     width: 100%;
-    margin-bottom: 30px; } }
+    margin-bottom: 30px; }
+
+  .post-list-mini .case-study {
+    width: 100%;
+    flex: 1 1 100%; } }
