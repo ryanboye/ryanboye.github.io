@@ -1086,3 +1086,17 @@ p.services {
     padding-top: 7px;
     margin-left: 10px;
 }
+
+
+@media screen and (max-width: 800px) {
+.consulting{
+    h6{ padding-top: 50px; }
+    .col-md-3{
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+    }    
+}
+.hero{
+        margin-bottom: 20px;
+    }
+}
