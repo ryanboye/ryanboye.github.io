@@ -1062,7 +1062,7 @@ p.services {
     color: #000;
 }
 
-.consulting .col-3 {
+.consulting .col-md-3 {
     background: #f2f2f2;
     padding: 10px;
     border: 4px solid white;
