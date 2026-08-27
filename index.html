@@ -5,14 +5,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<meta name="description" content="I turn customer understanding into product strategy, leading products from company narrative and portfolio direction through customer experience and business impact.">
+<meta name="description" content="I&#39;m a design and product leader in Oakland, California. For nearly 20 years, I&#39;ve made complicated technology easier to understand and built products around what customers need.">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ryan Boye">
-<meta property="og:title" content="Ryan Boye — Product &amp; Design Leader">
-<meta property="og:description" content="I build products people actually want to use.">
+<meta property="og:title" content="Ryan Boye — Design &amp; Product Leader">
+<meta property="og:description" content="A design and product leader who makes complicated technology simpler and builds products around what customers need.">
 <meta property="og:url" content="https://ryanboye.com/">
 <meta property="og:image" content="https://ryanboye.com/img/headshot.png">
 <meta property="og:image:width" content="579">
@@ -20,8 +20,8 @@
 <meta property="og:image:alt" content="Ryan Boye">
 
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ryan Boye — Product &amp; Design Leader">
-<meta name="twitter:description" content="I build products people actually want to use.">
+<meta name="twitter:title" content="Ryan Boye — Design &amp; Product Leader">
+<meta name="twitter:description" content="A design and product leader who makes complicated technology simpler and builds products around what customers need.">
 <meta name="twitter:image" content="https://ryanboye.com/img/headshot.png">
 <meta name="twitter:image:alt" content="Ryan Boye">
 
@@ -36,9 +36,8 @@
 <link rel="canonical" href="https://ryanboye.com/">
 
 <link rel="stylesheet" href="/css/main.css">
-<link rel="icon" type="image/png" href="/favicon.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+<link rel="alternate icon" type="image/png" href="/favicon.png">
 
 </head>
 
@@ -75,41 +74,230 @@
   body.home a:hover { color: var(--home-green); }
   body.home .mono { font-family: var(--home-mono); }
 
-  .home-wrap { max-width: 56rem; margin: 0 auto; padding: 0 4rem; }
-
-  /* Top nav (replaces site-header on home) */
-  .home-nav {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 1.75rem 0; font-family: var(--home-mono); font-size: 0.78rem;
-  }
-  .home-nav a.home-nav-name { font-weight: 600; color: #111; }
-  .home-nav-links { display: flex; gap: 1.5rem; color: var(--home-text-faint); }
+  .home-wrap { max-width: 62rem; margin: 0 auto; padding: 0 4rem; }
+  .home-wrap-wide { max-width: 1180px; padding: 0; }
 
   /* Hero */
-  .home-hero-container { position: relative; min-height: 480px; overflow: hidden; }
+  .home-hero-container { position: relative; overflow: hidden; }
+  .home-hero-shell { width: min(1180px, calc(100% - 3rem)); margin: 0 auto; }
   .home-wave-canvas {
-    position: absolute; top: 0; right: 0; width: 60%; height: 100%;
-    opacity: 0.45; pointer-events: none;
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    opacity: 0.2; pointer-events: none; z-index: 0;
   }
-  .home-hero { position: relative; z-index: 2; padding: 4rem 0 3rem; }
-  .home-hero-label {
-    font-family: var(--home-mono); font-size: 0.78rem; font-weight: 500;
-    color: var(--home-green); margin-bottom: 1rem; letter-spacing: 0.02em;
+  .home-hero { position: relative; z-index: 2; padding: 3rem 0 3.5rem; }
+  .home-feature {
+    overflow: hidden; background: #fafafa;
+    border: 1px solid #dedfdb; border-radius: 8px;
+    box-shadow: 0 18px 60px rgba(18, 20, 18, 0.06);
   }
-  .home-hero h1 {
+  .home-bio {
+    position: relative; display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(19rem, 0.92fr);
+    height: 38rem; min-height: 0; overflow: hidden;
+    background: #fafafa; border-bottom: 1px solid var(--home-border);
+  }
+  .home-thesis {
+    position: relative; z-index: 1;
+    display: flex; flex-direction: column; justify-content: flex-start;
+    padding: 5rem 4.5rem 3.5rem;
+  }
+  .home-thesis h1 {
     font-family: 'Inter', sans-serif;
-    font-size: 4rem; font-weight: 700; line-height: 1.05;
-    letter-spacing: -0.025em; color: #111; margin: 0;
+    font-size: 4.45rem; font-weight: 700; line-height: 0.98;
+    letter-spacing: -0.045em; color: #111; margin: 0;
+    white-space: nowrap;
   }
-  .home-hero h1 .home-cursor {
+  .home-thesis .home-cursor {
     display: inline-block; width: 3px; height: 0.85em;
     background: var(--home-green); margin-left: 4px; vertical-align: baseline;
     animation: home-blink 1s step-end infinite;
   }
   @keyframes home-blink { 50% { opacity: 0; } }
-  .home-hero-desc {
-    font-size: 1.15rem; color: #555; margin-top: 1.25rem;
-    max-width: 650px; line-height: 1.65;
+  .home-thesis-title {
+    display: block; margin-top: 1rem;
+    font-family: 'Inter', sans-serif; font-size: 2.35rem;
+    font-weight: 600; line-height: 1.06; letter-spacing: -0.035em;
+    color: #171717; white-space: nowrap;
+  }
+  .home-thesis-copy {
+    max-width: 29rem; margin: 3rem 0 0; color: #555;
+    font-size: 1.06rem; line-height: 1.72;
+  }
+  .home-thesis-proof {
+    padding-top: 1.4rem; margin-top: 3rem;
+    border-top: 1px solid var(--home-border);
+  }
+  .home-thesis-proof span {
+    display: block; color: var(--home-green);
+    font-family: var(--home-mono); font-size: 0.72rem;
+  }
+  .home-thesis-proof p {
+    max-width: 29rem; margin: 0.65rem 0 0; color: #777;
+    font-size: 0.8rem; line-height: 1.6;
+  }
+  .home-brand-marks {
+    display: flex; align-items: center; gap: 1.6rem;
+    margin-top: 1.15rem;
+  }
+  .home-brand-mark {
+    display: flex; align-items: center; height: 1.65rem;
+    color: #333; opacity: 0.72;
+    transition: opacity 0.15s, transform 0.15s;
+  }
+  .home-brand-mark:hover { opacity: 1; transform: translateY(-1px); }
+  .home-brand-mark img { display: block; width: auto; height: 100%; }
+  .home-brand-mark-cloudflare img { height: 2.4rem; margin: -0.4rem 0; }
+  .home-brand-mark-unity img { height: 1.85rem; }
+  .home-portrait {
+    position: relative; z-index: 1; width: auto; min-height: 0;
+    margin: 1.5rem 1.5rem 1.5rem 0; overflow: hidden; border-radius: 5px;
+    background: var(--home-card-bg);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.25);
+  }
+  .home-portrait img {
+    display: block; width: 100%; height: 100%;
+    object-fit: cover; object-position: 50% 47%;
+  }
+  .home-profile {
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: auto; margin: 0;
+    border-bottom: 1px solid var(--home-border);
+  }
+  .home-profile-title {
+    padding: 2.75rem 2.5rem 3.25rem;
+  }
+  .home-profile-copy {
+    display: contents;
+  }
+  .home-profile-column {
+    padding: 2.75rem 2.5rem 3.25rem;
+    border-left: 1px solid var(--home-border);
+  }
+  .home-profile-eyebrow {
+    margin-bottom: 1rem; color: var(--home-green);
+    font-family: var(--home-mono); font-size: 0.7rem;
+  }
+  .home-profile h2 {
+    max-width: none; margin: 0; color: #111; font-size: 2.45rem; line-height: 1.06;
+    font-weight: 680; letter-spacing: -0.045em;
+  }
+  .home-profile-column p {
+    margin: 0 0 0.58rem; color: #555;
+    font-size: 0.86rem; line-height: 1.7; break-inside: avoid;
+  }
+  .home-profile-column p + p { margin-top: 1rem; }
+  .home-profile-column p:last-child { margin-bottom: 0; }
+  .home-company-link {
+    color: #333; text-decoration: underline; text-decoration-color: #c9c9c9;
+    text-decoration-thickness: 1px; text-underline-offset: 0.17em;
+  }
+  .home-company-link:hover { text-decoration-color: var(--home-green); }
+  .home-topics {
+    overflow: hidden; padding: 0; background: #fbfbf8;
+    border-bottom: 1px solid var(--home-border);
+  }
+  .home-topics-grid {
+    display: grid; grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(16rem, auto));
+    background-image:
+      linear-gradient(to right, transparent calc(100% - 1px), rgba(31, 39, 33, 0.07) 1px),
+      linear-gradient(to bottom, transparent calc(100% - 1px), rgba(31, 39, 33, 0.07) 1px);
+    background-size: calc(100% / 12) 100%, 100% 50%;
+  }
+  .home-topics-head {
+    grid-column: 1 / 5; grid-row: 1 / 3;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 3rem 3.25rem; border-right: 1px solid #dde1dd;
+  }
+  .home-topics-eyebrow {
+    margin-bottom: 0.8rem; color: var(--home-green);
+    font-family: var(--home-mono); font-size: 0.7rem;
+  }
+  .home-topics h2 {
+    max-width: 10ch; margin: 0; color: #111; font-size: 2.5rem;
+    line-height: 1.04; letter-spacing: -0.045em;
+  }
+  .home-topic {
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 2rem 2.25rem; color: #171717; background: rgba(255, 255, 255, 0.88);
+    border: 1px solid #d9ddda;
+  }
+  .home-topic-index { color: var(--home-green); font-family: var(--home-mono); font-size: 0.68rem; }
+  .home-topic h3 {
+    max-width: 25ch; margin: 0; color: #171717; font-size: 1.42rem;
+    font-weight: 620; line-height: 1.13; letter-spacing: -0.035em;
+  }
+  .home-topics-actions {
+    padding-top: 1.5rem; border-top: 1px solid #d9ddda;
+    font-family: var(--home-mono); font-size: 0.7rem;
+  }
+  .home-topics-actions span { display: block; margin-bottom: 0.8rem; color: #7a817c; }
+  .home-topics-actions-links { display: flex; flex-wrap: wrap; gap: 0.6rem 1.15rem; }
+  .home-topics-actions a {
+    color: var(--home-green); text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .home-topics-actions a:hover { border-bottom-color: currentColor; }
+  .home-topic-one { grid-column: 5 / 9; grid-row: 1; margin: 1.25rem 0 0 1.25rem; }
+  .home-topic-two {
+    grid-column: 9 / 13; grid-row: 1; margin: 0 1.25rem 1.25rem 0;
+    background: #eff1ed;
+  }
+  .home-topic-three {
+    grid-column: 5 / 9; grid-row: 2; padding-top: 3rem;
+    background: transparent; border-width: 0 0 0 1px;
+  }
+  .home-topic-four {
+    grid-column: 9 / 13; grid-row: 2;
+    margin: 1.25rem 1.25rem 0;
+    background: #fff;
+  }
+  .home-explore {
+    padding: 4rem 4.25rem 4.5rem; background: #f6faf7;
+    border-top: 1px solid #dce8df;
+  }
+  .home-explore-head {
+    display: grid; grid-template-columns: minmax(10rem, 0.72fr) minmax(0, 1.28fr);
+    gap: 4rem; align-items: end; margin-bottom: 2.75rem;
+  }
+  .home-explore-eyebrow {
+    color: var(--home-green); font-family: var(--home-mono);
+    font-size: 0.7rem; margin-bottom: 0.7rem;
+  }
+  .home-explore h2 {
+    max-width: 16ch; margin: 0; color: #111;
+    font-size: 2.5rem; line-height: 1.08; letter-spacing: -0.04em;
+  }
+  .home-explore-head p {
+    margin: 0; color: #676d68; font-size: 0.92rem; line-height: 1.7;
+  }
+  .home-explore-links { border-top: 1px solid #cfded3; }
+  .home-explore-link {
+    display: grid; grid-template-columns: 4rem 1fr auto; align-items: center; gap: 1.5rem;
+    padding: 1.55rem 0; border-bottom: 1px solid #cfded3;
+  }
+  .home-explore-link:hover { color: #111 !important; }
+  .home-explore-index {
+    color: var(--home-green); font-family: var(--home-mono); font-size: 0.68rem;
+  }
+  .home-explore-link strong {
+    font-size: 1.3rem; line-height: 1.25; font-weight: 650; letter-spacing: -0.025em;
+  }
+  .home-explore-arrow { color: #9ba49d; font-size: 1.2rem; transition: transform 0.15s, color 0.15s; }
+  .home-explore-link:hover .home-explore-arrow { color: var(--home-green); transform: translate(2px, -2px); }
+  .home-location {
+    display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+    padding: 2rem 4.25rem; border-top: 1px solid var(--home-border);
+    color: #777d78; font-size: 0.82rem;
+  }
+  .home-location-place { display: flex; align-items: center; gap: 0.75rem; }
+  .home-location-copyright {
+    flex: none; color: #a2a7a3;
+    font-family: var(--home-mono); font-size: 0.68rem;
+  }
+  .home-oak-mark {
+    width: 2rem; height: 1.35rem; flex: none; overflow: visible;
+    fill: var(--home-green); transform: scaleY(-1);
   }
   .home-hero-actions { display: flex; gap: 0.6rem; margin-top: 1.75rem; flex-wrap: wrap; }
   .home-btn {
@@ -158,6 +346,28 @@
   }
   .home-role-entry p { margin: 0; color: #666; font-size: 0.9rem; line-height: 1.6; }
 
+  /* Selected startup advising */
+  .home-advising-intro {
+    margin: -0.75rem 0 1rem; color: #666; font-size: 0.9rem;
+  }
+  .home-advising-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border: 1px solid var(--home-border); border-radius: 8px;
+    background: var(--home-card-bg); overflow: hidden;
+  }
+  .home-advising-card {
+    display: block; padding: 1rem; min-height: 4.75rem;
+  }
+  .home-advising-card + .home-advising-card { border-left: 1px solid var(--home-border); }
+  .home-advising-card strong {
+    display: block; margin-bottom: 0.35rem; color: #111;
+    font-size: 0.88rem; font-weight: 600;
+  }
+  .home-advising-card span {
+    display: block; color: var(--home-text-dim);
+    font-family: var(--home-mono); font-size: 0.68rem; line-height: 1.45;
+  }
+
   /* Thesis */
   .home-thesis-headline {
     font-family: var(--home-mono); font-size: 1.05rem; color: #111;
@@ -180,6 +390,112 @@
     color: #111; font-weight: 500; margin-bottom: 0.55rem;
   }
   .home-proof-label { display: block; font-size: 0.78rem; line-height: 1.45; color: var(--home-text-dim); }
+
+  /* Selected growth work */
+  .home-growth-header {
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem;
+    align-items: start; margin-bottom: 2rem;
+  }
+  .home-growth-title {
+    margin: 0; max-width: 34rem; color: #111;
+    font-size: 2rem; line-height: 1.2; letter-spacing: -0.025em;
+  }
+  .home-growth-intro {
+    margin: 0; color: #555; font-size: 1rem; line-height: 1.7;
+  }
+  .home-journey {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    border: 1px solid var(--home-border); border-radius: 8px;
+    background: var(--home-card-bg); overflow: hidden; margin-bottom: 1.25rem;
+  }
+  .home-journey-step { padding: 1rem; min-height: 7rem; }
+  .home-journey-step + .home-journey-step { border-left: 1px solid var(--home-border); }
+  .home-journey-index {
+    display: block; margin-bottom: 0.75rem; color: var(--home-green);
+    font-family: var(--home-mono); font-size: 0.68rem;
+  }
+  .home-journey-step strong {
+    display: block; margin-bottom: 0.35rem; color: #111;
+    font-size: 0.86rem; font-weight: 600;
+  }
+  .home-journey-step span:last-child {
+    display: block; color: var(--home-text-dim); font-size: 0.74rem; line-height: 1.45;
+  }
+  .home-work-visuals {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  }
+  .home-work-visual {
+    margin: 0; border: 1px solid var(--home-border); border-radius: 8px;
+    background: var(--home-card-bg); overflow: hidden;
+  }
+  .home-work-visual img {
+    display: block; width: 100%; aspect-ratio: 16 / 9;
+    object-fit: cover; object-position: top left;
+  }
+  .home-work-visual figcaption {
+    padding: 0.9rem 1rem 1rem; color: #666;
+    font-size: 0.78rem; line-height: 1.5;
+  }
+  .home-work-visual figcaption strong { color: #222; }
+  .home-growth-meta {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 1rem; margin-top: 1.25rem;
+  }
+  .home-growth-meta p {
+    margin: 0; max-width: 38rem; color: #777; font-size: 0.78rem; line-height: 1.55;
+  }
+  .home-text-link {
+    flex: none; color: var(--home-green) !important;
+    font-family: var(--home-mono); font-size: 0.75rem;
+  }
+
+  /* Passion areas */
+  .home-passions {
+    --home-passion-green: #20aa5d;
+    padding: 4.5rem 0 3.5rem;
+    border-top: 1px solid var(--home-border);
+  }
+  .home-passions-label {
+    margin: 0 0 2rem; color: var(--home-text-faint);
+    font-family: var(--home-mono); font-size: 0.78rem; font-weight: 500;
+  }
+  .home-passion-flow { position: relative; }
+  .home-passion-line {
+    position: absolute; inset: 0 10%; width: 80%; height: 100%;
+    overflow: visible; z-index: 0;
+  }
+  .home-passion-line path {
+    fill: none; stroke: var(--home-passion-green); stroke-width: 1.65;
+    stroke-linecap: round; opacity: 0.62;
+    vector-effect: non-scaling-stroke;
+  }
+  .home-passion-line .home-passion-sketch {
+    stroke-width: 0.9; opacity: 0.24;
+  }
+  .home-passion-item {
+    position: relative; z-index: 1; width: 46%; min-height: 9.25rem;
+    display: flex; flex-direction: column; justify-content: center;
+    background: var(--home-bg);
+  }
+  .home-passion-item:nth-of-type(even) { margin-left: auto; text-align: right; }
+  .home-passion-item h3 {
+    max-width: 26rem; margin: 0; color: var(--home-passion-green);
+    font-size: 1.55rem; line-height: 1.2; letter-spacing: -0.02em;
+  }
+  .home-passion-item:nth-of-type(even) h3 { margin-left: auto; }
+  .home-passions-cta {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2rem; margin-top: 2rem; padding-top: 2rem;
+    border-top: 1px solid var(--home-border);
+  }
+  .home-passions-cta p {
+    max-width: 34rem; margin: 0; color: #555;
+    font-size: 0.95rem; line-height: 1.65;
+  }
+  .home-passions-cta a {
+    flex: none; color: var(--home-passion-green);
+    font-family: var(--home-mono); font-size: 0.78rem;
+  }
 
   /* Operating range */
   .home-range-grid {
@@ -234,158 +550,246 @@
     font-size: 1.1rem; color: #555; max-width: 620px; line-height: 1.7; margin-bottom: 1.5rem;
   }
 
-  /* Footer */
-  .home-footer {
-    padding: 2.5rem 0 2rem; margin-top: 1rem; border-top: 1px solid var(--home-border);
-    font-family: var(--home-mono); font-size: 0.72rem; color: var(--home-text-faint);
-    display: flex; justify-content: space-between; align-items: center;
-  }
-  .home-footer-status { display: flex; align-items: center; gap: 0.4rem; }
-  .home-footer-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--home-green); display: inline-block; }
-
   /* Mobile */
   @media (max-width: 700px) {
     .home-wrap { padding: 0 1.5rem; }
+    .home-wrap-wide { padding: 0; width: calc(100% - 3rem); }
+    .home-hero-shell { width: calc(100% - 2rem); }
     .home-hero { padding: 2.5rem 0 2rem; }
-    .home-hero h1 { font-size: 2.5rem; }
+    .home-bio { grid-template-columns: 1fr; height: auto; min-height: 45rem; }
+    .home-thesis { min-height: 26rem; padding: 2rem; }
+    .home-thesis h1 { font-size: clamp(2.7rem, 13vw, 3.3rem); }
+    .home-thesis-title { margin-top: 0.65rem; font-size: clamp(1.55rem, 7.4vw, 2rem); }
+    .home-thesis-copy { margin-top: 1.5rem; }
+    .home-thesis-proof { margin-top: 2.25rem; }
+    .home-profile { display: block; width: auto; margin: 0; }
+    .home-profile-title { padding: 2.25rem 2rem; border-bottom: 1px solid var(--home-border); }
+    .home-profile-copy { display: block; }
+    .home-profile-column { padding: 2.25rem 2rem; }
+    .home-profile-column { border-left: 0; }
+    .home-profile-column + .home-profile-column { border-top: 1px solid var(--home-border); }
+    .home-profile h2 { max-width: none; font-size: 2rem; }
+    .home-portrait {
+      width: auto; min-height: 19.375rem; aspect-ratio: auto; margin: 0 1rem 1rem;
+    }
     .home-hero-container { min-height: auto; }
-    .home-wave-canvas { width: 100%; opacity: 0.2; }
+    .home-wave-canvas { width: 100%; height: 18rem; opacity: 0.18; }
+    .home-profile-column p { font-size: 0.92rem; }
+    .home-topics-grid { display: block; background-size: 25% 100%, 100% 25%; }
+    .home-topics-head,
+    .home-topic {
+      min-height: 13rem; margin: 0; padding: 2.25rem 2rem;
+      transform: none; border-width: 0 0 1px;
+    }
+    .home-topics-head { min-height: 21rem; }
+    .home-topics h2 { max-width: 10ch; font-size: 2rem; }
+    .home-topic h3 { font-size: 1.5rem; }
+    .home-explore { padding: 2.75rem 2rem 3rem; }
+    .home-explore-head { grid-template-columns: 1fr; gap: 1.25rem; margin-bottom: 2rem; }
+    .home-explore h2 { font-size: 2rem; }
+    .home-explore-link { grid-template-columns: 2.5rem 1fr auto; gap: 0.75rem; padding: 1.3rem 0; }
+    .home-explore-link strong { font-size: 1.05rem; }
+    .home-location {
+      padding: 1.5rem 2rem; align-items: flex-start;
+      flex-direction: column; gap: 0.85rem;
+    }
+    .home-location-place { align-items: flex-start; }
     .home-card-grid { grid-template-columns: 1fr; }
+    .home-growth-header { grid-template-columns: 1fr; gap: 1rem; }
+    .home-growth-title { font-size: 1.65rem; }
+    .home-journey { grid-template-columns: 1fr; }
+    .home-journey-step { min-height: auto; }
+    .home-journey-step + .home-journey-step { border-left: none; border-top: 1px solid var(--home-border); }
+    .home-work-visuals { grid-template-columns: 1fr; }
+    .home-growth-meta { align-items: flex-start; flex-direction: column; }
+    .home-passions { padding: 3rem 0 2.5rem; }
+    .home-passions-label { margin-bottom: 1rem; }
+    .home-passion-line { left: 0; right: auto; width: 2.5rem; }
+    .home-passion-item,
+    .home-passion-item:nth-of-type(even) {
+      width: calc(100% - 3.5rem); min-height: 9.5rem;
+      margin-left: 3.5rem; text-align: left; background: transparent;
+    }
+    .home-passion-item:nth-of-type(even) h3 { margin-left: 0; }
+    .home-passion-item h3 { font-size: 1.35rem; }
+    .home-passions-cta { align-items: flex-start; flex-direction: column; gap: 1rem; }
     .home-range-grid { grid-template-columns: 1fr; }
     .home-card { padding: 1.35rem 1.25rem; }
     .home-role-company-line { align-items: baseline; }
     .home-role-entry { grid-template-columns: 1fr; gap: 0.55rem; }
+    .home-advising-grid { grid-template-columns: 1fr 1fr; }
+    .home-advising-card + .home-advising-card { border-left: none; }
+    .home-advising-card:nth-child(even) { border-left: 1px solid var(--home-border); }
+    .home-advising-card:nth-child(n+3) { border-top: 1px solid var(--home-border); }
     .home-proof-grid { grid-template-columns: 1fr 1fr; }
     .home-proof-item { min-height: 6.5rem; }
     .home-proof-item + .home-proof-item { border-left: none; }
     .home-proof-item:nth-child(even) { border-left: 1px solid var(--home-border); }
     .home-proof-item:nth-child(n+3) { border-top: 1px solid var(--home-border); }
     .home-hero-actions { flex-wrap: wrap; }
-    .home-footer { flex-direction: column; gap: 0.5rem; align-items: flex-start; }
   }
 </style>
 
 <body class="home">
+  <header class="site-header">
+  <nav aria-label="Primary navigation">
+    <a class="nav-home" href="/">
+      <img class="nav-mark" src="/favicon.svg?v=2" alt="" width="64" height="64">
+      <span class="nav-home-label">Ryan Boye</span>
+    </a>
+    <div class="nav-links">
+      <a class="" href="/work/">Work</a>
+      <a class="" href="/approach/">Approach</a>
+      <a class="" href="/advising/">Advising</a>
+      <a class="nav-bmo" href="https://bmo.ryanboye.com/" target="_blank" rel="noopener noreferrer" aria-label="BMO — Ryan Boye's AI explorations" title="AI explorations">
+        <img src="/img/bmo-nav.png" alt="" width="936" height="1119">
+      </a>
+      <a class="nav-icon" href="https://linkedin.com/in/ryanboye" target="_blank" rel="noopener noreferrer" aria-label="Ryan Boye on LinkedIn">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <text x="16" y="24.5" fill="currentColor" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" text-anchor="middle">in</text>
+        </svg>
+      </a>
+      <a class="nav-icon" href="mailto:hello@ryanboye.com" aria-label="Email Ryan Boye">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M3.5 6.5h25v19h-25zM4 7.25l12 9.5 12-9.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </nav>
+</header>
 
-  <div class="home-wrap">
-    <nav class="home-nav">
-      <a class="home-nav-name" href="/">ryan boye</a>
-      <div class="home-nav-links">
-        <a href="https://linkedin.com/in/ryanboye" target="_blank">linkedin</a>
-        <a href="mailto:hello@ryanboye.com">contact</a>
-      </div>
-    </nav>
-  </div>
 
   <!-- ============== HERO ============== -->
   <div class="home-hero-container">
-    <canvas class="home-wave-canvas" id="home-wave" aria-hidden="true"></canvas>
-    <div class="home-wrap">
+    <div class="home-hero-shell">
       <section class="home-hero">
-        <div class="home-hero-label">// Product &amp; Design Leader</div>
-        <h1>I build products people actually want to use.<span class="home-cursor"></span></h1>
-        <p class="home-hero-desc">I turn customer understanding into product strategy—connecting what people value, what technology makes possible, and where the business can win. At Unity, I helped shape company strategy and translated it into clearer product direction across a $1B+ business. Today, I carry that work end to end, leading product strategy and customer experience for AI-native game creation.</p>
-        <div class="home-hero-actions">
-          <a class="home-btn" href="mailto:hello@ryanboye.com">Get in touch</a>
+        <div class="home-feature">
+        <div class="home-bio">
+          <canvas class="home-wave-canvas" id="home-wave" aria-hidden="true"></canvas>
+          <div class="home-thesis">
+            <div>
+              <h1>Ryan Boye.</h1>
+              <div class="home-thesis-title">Design &amp; Product Leader<span class="home-cursor"></span></div>
+              <p class="home-thesis-copy">I help companies understand their customers, choose the right problems, and turn complicated technology into products people want to use.</p>
+            </div>
+
+            <div class="home-thesis-proof">
+              <span>Nearly 20 years shaping products, teams, and strategy.</span>
+              <div class="home-brand-marks" aria-label="Experience at Cloudflare and Unity">
+                <a class="home-brand-mark home-brand-mark-cloudflare" href="https://www.cloudflare.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Cloudflare">
+                  <img src="/img/cloudflare-logo.svg" alt="Cloudflare" width="120" height="60">
+                </a>
+                <a class="home-brand-mark home-brand-mark-unity" href="https://unity.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Unity">
+                  <img src="/img/unity-logo-official.png" alt="Unity" width="296" height="100">
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <figure class="home-portrait">
+            <img src="/img/ryan-portrait-forest.jpg" alt="Ryan Boye in a wooded landscape" width="1600" height="2400" fetchpriority="high">
+          </figure>
+        </div>
+
+        <section class="home-profile" aria-labelledby="home-profile-title">
+          <div class="home-profile-title">
+            <div class="home-profile-eyebrow">// A short biography</div>
+            <h2 id="home-profile-title">Hi, I'm Ryan.</h2>
+          </div>
+          <div class="home-profile-copy">
+            <div class="home-profile-column">
+              <p>I was one of the first 100 employees at <a class="home-company-link" href="https://www.cloudflare.com/" target="_blank" rel="noopener noreferrer">Cloudflare</a>, where I helped make deeply technical performance and security products easier to understand and use, working across analytics, developer tools, and the broader product experience.</p>
+              <p>I've also advised more than a dozen early-stage startups, helping founders shape their products and better understand their customers. Some have since grown into Series B and C companies, while others have been acquired.</p>
+            </div>
+            <div class="home-profile-column">
+              <p>For the past seven years, I've been at <a class="home-company-link" href="https://unity.com/" target="_blank" rel="noopener noreferrer">Unity</a>. I joined as a Staff Designer and went on to lead design for its Grow business, which helps developers acquire users and monetize their games—and today represents the majority of Unity's revenue.</p>
+              <p>During Unity's turnaround, I also served on its L2 leadership staff, helping focus the business and put customers back at the center of our decisions.</p>
+            </div>
+            <div class="home-profile-column">
+              <p>Most recently, I joined <a class="home-company-link" href="https://unity.com/" target="_blank" rel="noopener noreferrer">Unity's</a> product team to take a more hands-on role. Today, I lead work exploring how AI can change the way games are created, including a web-based creation product I built and am taking to market.</p>
+              <p>That role brings together the things I care about most: understanding people, making complicated systems simpler, and building products that solve problems worth solving.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="home-topics" id="topics" aria-labelledby="home-topics-title">
+          <div class="home-topics-grid" aria-label="Topics Ryan is excited about">
+            <header class="home-topics-head">
+              <div>
+                <div class="home-topics-eyebrow">// Topics I'm excited about</div>
+                <h2 id="home-topics-title">Questions shaping what I build next.</h2>
+              </div>
+              <nav class="home-topics-actions" aria-label="Explore Ryan Boye's AI work">
+                <span>Explore the experiments</span>
+                <div class="home-topics-actions-links">
+                  <a href="https://github.com/ryanboye" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                  <a href="https://bmo.ryanboye.com/" target="_blank" rel="noopener noreferrer">BMO ↗</a>
+                </div>
+              </nav>
+            </header>
+            <article class="home-topic home-topic-one">
+              <span class="home-topic-index">01</span>
+              <h3>How do experiences change when we build products for agents, not just humans?</h3>
+            </article>
+            <article class="home-topic home-topic-two">
+              <span class="home-topic-index">02</span>
+              <h3>Moving beyond chat, which workflows let humans and agents work best together—and when should a human be in the loop?</h3>
+            </article>
+            <article class="home-topic home-topic-three">
+              <span class="home-topic-index">03</span>
+              <h3>How do we keep agents on task for long periods, minimizing drift and rot in their output?</h3>
+            </article>
+            <article class="home-topic home-topic-four">
+              <span class="home-topic-index">04</span>
+              <h3>How do we enforce standards and move AI products from prototype to production?</h3>
+            </article>
+          </div>
+        </section>
+
+        <section class="home-explore" aria-labelledby="home-explore-title">
+          <div class="home-explore-head">
+            <div>
+              <div class="home-explore-eyebrow">// Explore</div>
+              <h2 id="home-explore-title">A little more about me.</h2>
+            </div>
+            <p>Three places to start: how I lead, what my teams built at Unity, and how I help early-stage companies turn customer understanding into product direction.</p>
+          </div>
+
+          <nav class="home-explore-links" aria-label="Learn more about Ryan Boye">
+            <a class="home-explore-link" href="/approach/">
+              <span class="home-explore-index">01</span>
+              <strong>My approach to leadership and strategy</strong>
+              <span class="home-explore-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="home-explore-link" href="/work/">
+              <span class="home-explore-index">02</span>
+              <strong>An overview of my work at Unity</strong>
+              <span class="home-explore-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="home-explore-link" href="/advising/">
+              <span class="home-explore-index">03</span>
+              <strong>How I help early-stage companies</strong>
+              <span class="home-explore-arrow" aria-hidden="true">↗</span>
+            </a>
+          </nav>
+        </section>
+
+        <div class="home-location">
+          <div class="home-location-place">
+            <svg class="home-oak-mark" viewBox="-278.1 -169.4 556.2 338.9" aria-hidden="true">
+              <use href="/img/oakland-logo.svg#_x7E__Tree_Black" xlink:href="/img/oakland-logo.svg#_x7E__Tree_Black" width="556.2" height="338.9" x="-278.1" y="-169.4"></use>
+            </svg>
+            <span>Made with love in Oakland, California.</span>
+          </div>
+          <span class="home-location-copyright">&copy; 2026 Ryan Boye</span>
+        </div>
         </div>
       </section>
     </div>
   </div>
 
-  <div class="home-wrap">
-
-    <!-- ============== PROOF ============== -->
-    <section class="home-section" id="proof">
-      <h2 class="home-section-label">// My role</h2>
-      <div class="home-role-company-line">
-        <strong>Unity Technologies</strong>
-        <span>2019 &ndash; present</span>
-      </div>
-      <div class="home-role-history">
-        <div class="home-role-entry">
-          <div class="home-role-title">Principal Product Manager, AI Creation<span>2026 &ndash; present</span></div>
-          <p>Lead product direction and customer experience for Unity's AI-native game-creation work.</p>
-        </div>
-        <div class="home-role-entry">
-          <div class="home-role-title">Previously: Director of Product Design, Grow</div>
-          <p>One of two design heads at Unity, leading managers and senior ICs across advertising, monetization, and user acquisition.</p>
-        </div>
-      </div>
-      <h2 class="home-section-label home-section-label-secondary">// My time at Unity</h2>
-      <div class="home-proof-grid">
-        <div class="home-proof-item">
-          <span class="home-proof-value">15-person org</span>
-          <span class="home-proof-label">Led managers and senior ICs across Unity's growth design organization</span>
-        </div>
-        <div class="home-proof-item">
-          <span class="home-proof-value">0 voluntary attrition</span>
-          <span class="home-proof-label">Built and retained a high-performing design organization for more than five years</span>
-        </div>
-        <div class="home-proof-item">
-          <span class="home-proof-value">40+ &rarr; 3 pillars</span>
-          <span class="home-proof-label">Helped define the portfolio strategy that organized fragmented services into three coherent customer-facing products</span>
-        </div>
-        <div class="home-proof-item">
-          <span class="home-proof-value">$1B+ business</span>
-          <span class="home-proof-label">Led product design across Unity's machine-learning-driven advertising and monetization business</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============== OPERATING RANGE ============== -->
-    <section class="home-section">
-      <h2 class="home-section-label">// From company strategy to product execution</h2>
-      <div class="home-range-grid">
-        <article class="home-range-card">
-          <span class="home-range-index">01 / company strategy</span>
-          <h3>Shape the direction.</h3>
-          <p>Helped shape Unity's company strategy, narrative, and positioning with executive leadership—then translated that direction into product and portfolio choices across the business. The resulting narrative was used across board materials, company communications, and Unity's global customer event.</p>
-        </article>
-
-        <article class="home-range-card">
-          <span class="home-range-index">02 / product &amp; business</span>
-          <h3>Change what gets built.</h3>
-          <p>Guided product strategy and customer experience across advertising, monetization, and user acquisition, helping organize more than 40 disconnected services into three coherent product pillars.</p>
-        </article>
-
-        <article class="home-range-card">
-          <span class="home-range-index">03 / AI product building</span>
-          <h3>Carry the whole product.</h3>
-          <p>Lead Unity's AI-native game-creation work across product thesis, roadmap, technical tradeoffs, prioritization, customer experience, and measures of success—from an initial idea to a playable result.</p>
-        </article>
-
-        <article class="home-range-card">
-          <span class="home-range-index">04 / craft &amp; story</span>
-          <h3>Make the value tangible.</h3>
-          <p>Led the redesign of Unity.com, aligning marketing, brand, and design around a clearer company story and visual language.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- ============== LEADERSHIP ============== -->
-    <section class="home-section">
-      <h2 class="home-section-label">// leadership</h2>
-      <h3 class="home-thesis-headline">I build teams that grow and last.</h3>
-      <p class="home-approach-text">At Unity, I built and retained an organization of managers and senior ICs with zero voluntary attrition over five years. More recently, I led 12 senior designers from Figma-first workflows to working prototypes in code in four weeks.</p>
-    </section>
-
-    <!-- ============== EARLIER EXPERIENCE ============== -->
-    <section class="home-section">
-      <h2 class="home-section-label">// Earlier</h2>
-      <h3 class="home-thesis-headline">I have always worked across the seams.</h3>
-      <p class="home-approach-text">Before Unity, I spent more than a decade building and advising startups. At Cloudflare, I helped make the value of a deeply technical platform tangible through its customer-facing product. As a founder, I helped take a product from research and prototype through launch and its first 200 paying customers.</p>
-    </section>
-
-    <!-- ============== FOOTER ============== -->
-    <footer class="home-footer">
-      <span>&copy; 2026 Ryan Boye</span>
-      <span class="home-footer-status"><span class="home-footer-dot"></span> San Francisco Bay Area</span>
-    </footer>
-
-  </div>
-
 <script>
-  // Wave canvas — adapted from the bmo version. Click to drop a ripple.
+  // Animated ASCII field. Clicks are intentionally disabled so it remains decorative.
   (function() {
     const canvas = document.getElementById('home-wave');
     if (!canvas) return;
@@ -393,7 +797,6 @@
     let W, H, cols, rows, time = 0;
     const CW = 10, CH = 16;
     const RAMP = ' .:-=+*#%@';
-    const waveCenters = [];
 
     function resize() {
       W = canvas.clientWidth; H = canvas.clientHeight;
@@ -405,47 +808,24 @@
       rows = Math.floor(H / CH);
     }
 
-    canvas.addEventListener('click', (e) => {
-      const r = canvas.getBoundingClientRect();
-      const gx = Math.floor((e.clientX - r.left) / CW);
-      const gy = Math.floor((e.clientY - r.top) / CH);
-      if (waveCenters.length > 5) waveCenters.shift();
-      waveCenters.push({ x: gx, y: gy, born: time });
-    });
-
     function render() {
       ctx.clearRect(0, 0, W, H);
       ctx.font = `${CH - 2}px 'JetBrains Mono', monospace`;
       ctx.textBaseline = 'top';
 
-      let wi = waveCenters.length;
-      while (wi--) { if (time - waveCenters[wi].born > 15) waveCenters.splice(wi, 1); }
-
       for (let y = 0; y < rows; y++) {
         for (let x = 0; x < cols; x++) {
-          let w1 = Math.sin(x * 0.08 - time * 1.2 + y * 0.15) * 0.5 + 0.5;
-          let w2 = Math.sin(x * 0.12 + time * 0.8 - y * 0.1) * 0.5 + 0.5;
-          let w3 = Math.sin((x + y) * 0.06 + time * 0.5) * 0.5 + 0.5;
-          let ccx = x - cols / 2, ccy = y - rows / 2;
-          let w4 = Math.sin(Math.sqrt(ccx * ccx + ccy * ccy) * 0.12 - time * 1.5) * 0.5 + 0.5;
-          let v = w1 * 0.35 + w2 * 0.25 + w3 * 0.2 + w4 * 0.2;
-
-          for (let wc = 0; wc < waveCenters.length; wc++) {
-            const c = waveCenters[wc];
-            const dx = x - c.x, dy = y - c.y;
-            const d = Math.sqrt(dx * dx + dy * dy);
-            const age = time - c.born;
-            v += Math.sin(d * 0.25 - time * 2) * 0.3 * Math.max(0, 1 - age / 15) * Math.exp(-d * 0.03);
-          }
-
-          v = Math.pow(Math.max(0, v), 1.2);
+          const w1 = Math.sin(x * 0.08 - time * 1.2 + y * 0.15) * 0.5 + 0.5;
+          const w2 = Math.sin(x * 0.12 + time * 0.8 - y * 0.1) * 0.5 + 0.5;
+          const w3 = Math.sin((x + y) * 0.06 + time * 0.5) * 0.5 + 0.5;
+          const ccx = x - cols / 2, ccy = y - rows / 2;
+          const w4 = Math.sin(Math.sqrt(ccx * ccx + ccy * ccy) * 0.12 - time * 1.5) * 0.5 + 0.5;
+          let v = Math.pow(Math.max(0, w1 * 0.35 + w2 * 0.25 + w3 * 0.2 + w4 * 0.2), 1.2);
           if (v < 0.12) continue;
 
           const ri = Math.min(RAMP.length - 1, (v * RAMP.length) | 0);
           const hue = (x * 2 + y * 1.5 + time * 25) % 360;
-          const alpha = 0.08 + v * 0.35;
-
-          ctx.fillStyle = `hsla(${hue}, 12%, 65%, ${alpha})`;
+          ctx.fillStyle = `hsla(${hue}, 12%, 65%, ${0.08 + v * 0.35})`;
           ctx.fillText(RAMP[ri], x * CW, y * CH);
         }
       }
