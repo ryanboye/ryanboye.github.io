@@ -17,6 +17,58 @@ html {
     font-size: 18px;
 }
 
+/* ---------- Approach Page: Type Hierarchy ---------- */
+.approach-page .subpage-hero-detail h2 {
+    font-size: clamp(2.25rem, 3vw, 2.75rem);
+    line-height: 1.04;
+    letter-spacing: -0.045em;
+}
+
+.approach-page .role-of-design-intro h2,
+.approach-page .leadership-chapter > .work-chapter-heading h2,
+.approach-page .organization-alignment-header h3 {
+    font-size: clamp(2.5rem, 3.75vw, 3.25rem);
+    line-height: 1.03;
+    letter-spacing: -0.045em;
+}
+
+.approach-page .work-capability h2,
+.approach-page .role-of-design-grid h3,
+.approach-page .leadership-framework-card h2,
+.approach-page .organization-alignment-grid h3 {
+    max-width: 17rem;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.3rem;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+}
+
+.approach-page .approach-next h2 {
+    font-size: 2rem;
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+}
+
+@media (max-width: 768px) {
+    .approach-page .subpage-hero-detail h2 {
+        font-size: 2rem;
+    }
+
+    .approach-page .role-of-design-intro h2,
+    .approach-page .leadership-chapter > .work-chapter-heading h2,
+    .approach-page .organization-alignment-header h3 {
+        font-size: 2.25rem;
+    }
+
+    .approach-page .work-capability h2,
+    .approach-page .role-of-design-grid h3,
+    .approach-page .leadership-framework-card h2,
+    .approach-page .organization-alignment-grid h3 {
+        font-size: 1.25rem;
+    }
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 400;
@@ -154,14 +206,14 @@ img {
     font-size: 0.78rem;
     color: #111;
     text-decoration: none;
-    text-transform: lowercase;
+    text-transform: none;
     letter-spacing: 0.02em;
 }
 
 .site-header .nav-mark {
     display: block;
-    width: 1.1rem;
-    height: 1.1rem;
+    width: 1.25rem;
+    height: 1.25rem;
     flex: none;
 }
 
@@ -195,7 +247,7 @@ img {
     color: #bbb;
     text-decoration: none;
     margin-left: 0;
-    text-transform: lowercase;
+    text-transform: none;
     letter-spacing: 0.02em;
     transition: color 0.15s;
 }
@@ -233,8 +285,8 @@ img {
 .nav-links a.nav-icon {
     display: grid;
     place-items: center;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.7rem;
+    height: 1.7rem;
     color: #bbb;
     line-height: 1;
     transition: color 0.15s, transform 0.15s;
@@ -907,53 +959,41 @@ img {
 
 /* ---------- Footer ---------- */
 .site-footer {
-    padding: 2.5rem 0 2rem;
-    border-top: 1px solid #eaeaea;
-    margin-top: 2rem;
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
-}
-
-.footer-inner {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: flex-start;
     gap: 2rem;
-}
-
-.footer-left {
-    flex: 1;
-}
-
-.footer-name {
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
-    font-weight: 600;
-    font-size: 0.78rem;
-    color: #111;
-    text-transform: lowercase;
-    letter-spacing: 0.02em;
-    margin-bottom: 0.35rem;
-}
-
-.footer-email a {
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
-    font-size: 0.72rem;
-    color: #888;
-    letter-spacing: 0.02em;
-}
-
-.footer-right {
-    flex: 1;
-    text-align: right;
-}
-
-.footer-bio {
+    padding: 2rem 4.25rem;
+    border-top: 1px solid #eaeaea;
+    margin-top: 4rem;
+    color: #777d78;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 0.78rem;
-    color: #888;
-    line-height: 1.6;
-    max-width: 400px;
-    margin-left: auto;
+    font-size: 0.82rem;
 }
+
+.site-footer-place {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.site-footer-oak-mark {
+    width: 2rem;
+    height: 1.35rem;
+    flex: none;
+    overflow: visible;
+    fill: #2d8a4e;
+    transform: scaleY(-1);
+}
+
+.site-footer-copyright {
+    flex: none;
+    color: #a2a7a3;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.68rem;
+}
+
+.home-feature > .site-footer { margin-top: 0; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
@@ -968,28 +1008,39 @@ img {
 
     .site-header nav {
         width: calc(100% - 2rem);
-        min-height: 0;
-        padding: 0.85rem 0 0.75rem;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.65rem;
+        min-height: 3.65rem;
+        padding: 0;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
     }
 
     .nav-links {
-        width: 100%;
+        width: auto;
         flex: 0 0 auto;
-        justify-content: flex-start;
-        gap: 1.25rem;
-        overflow-x: auto;
-        scrollbar-width: none;
+        justify-content: flex-end;
+        gap: 0.9rem;
+        overflow: visible;
     }
 
-    .nav-links::-webkit-scrollbar { display: none; }
+    .site-header .nav-home {
+        gap: 0.55rem;
+        font-size: 0.7rem;
+    }
+
+    .site-header .nav-mark {
+        width: 1.05rem;
+        height: 1.05rem;
+    }
 
     .nav-links a {
         margin-left: 0;
         margin-right: 0;
+        font-size: 0.68rem;
     }
+
+    .nav-links a.nav-bmo,
+    .nav-links a.nav-icon { display: none; }
 
     .hero {
         padding: 3rem 0 2rem 0;
@@ -1041,16 +1092,15 @@ img {
         grid-template-columns: 1fr;
     }
 
-    .footer-inner {
+    .site-footer {
+        padding: 1.4rem 1.5rem;
+        align-items: flex-start;
         flex-direction: column;
+        gap: 0.85rem;
     }
 
-    .footer-right {
-        text-align: left;
-    }
-
-    .footer-bio {
-        margin-left: 0;
+    .site-footer-place {
+        align-items: flex-start;
     }
 
     .contact-hero .row {
@@ -1293,6 +1343,18 @@ img {
     letter-spacing: -0.045em;
 }
 
+.work-previous-heading {
+    grid-column: 1 / 7;
+}
+
+.work-previous-heading .work-chapter-label {
+    margin-bottom: 0.65rem;
+}
+
+.work-previous-heading h2 {
+    max-width: 15ch;
+}
+
 .approach-hero .subpage-hero-detail h2 {
     color: #2d8a4e;
 }
@@ -1305,6 +1367,37 @@ img {
     color: #555;
     font-size: 1rem;
     line-height: 1.7;
+}
+
+.work-current-note {
+    display: grid;
+    grid-template-columns: 0.55fr 1.45fr;
+    gap: 2.5rem;
+    align-items: center;
+    margin: 0 0 2.75rem;
+    padding: 1.25rem 1.5rem;
+    background: #f7faf8;
+    border: 1px solid #dfe9e2;
+    border-radius: 6px;
+}
+
+.work-current-note .work-chapter-label {
+    margin-bottom: 0.25rem;
+}
+
+.work-current-note h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+}
+
+.work-current-note p {
+    max-width: 45rem;
+    margin: 0;
+    color: #555;
+    font-size: 0.85rem;
+    line-height: 1.65;
 }
 
 .work-hero {
@@ -1512,6 +1605,16 @@ img {
     background: #fff;
     border: 1px solid #eaeaea;
     border-radius: 8px;
+}
+
+.leadership-framework-number {
+    display: block;
+    margin-bottom: 1.35rem;
+    color: #2d8a4e;
+    font-size: 2.9rem;
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.06em;
 }
 
 .leadership-framework-card h2 {
@@ -1786,36 +1889,94 @@ img {
     border-top: 1px solid #e5e5e5;
 }
 
-.role-of-design-thesis {
+.role-of-design-intro {
     display: grid;
-    grid-template-columns: 0.85fr 1.15fr;
-    gap: 4rem;
-    align-items: start;
-    padding: 2.75rem 0;
-    border-top: 1px solid #e5e5e5;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: clamp(3rem, 7vw, 7rem);
+    align-items: center;
+    padding: 3.5rem 0;
     border-bottom: 1px solid #e5e5e5;
 }
 
-.role-of-design-thesis h3 {
-    max-width: 15ch;
+.role-of-design-intro h2 {
+    max-width: none;
     margin: 0;
-    font-size: 2.25rem;
-    line-height: 1.06;
+    font-size: clamp(2.5rem, 4.25vw, 4rem);
+    line-height: 1.02;
     letter-spacing: -0.045em;
 }
 
-.role-of-design-thesis p {
-    max-width: 42rem;
-    margin: 0;
+.role-of-design-intro p {
+    max-width: 44rem;
+    margin: 1.5rem 0 0;
     color: #555;
     font-size: 1rem;
-    line-height: 1.75;
+    line-height: 1.7;
 }
+
+.design-org-diagram {
+    margin: 0;
+    overflow: visible;
+    border: 1px solid #d9dedb;
+}
+
+.design-org-silos {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    min-height: 15rem;
+    background: #f7faf7;
+}
+
+.design-org-silos > span {
+    padding: 1.25rem 0.65rem;
+    color: #777e79;
+    border-right: 1px solid #d9dedb;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.68rem;
+    line-height: 1.35;
+    text-align: center;
+}
+
+.design-org-silos > span:last-of-type {
+    border-right: 0;
+}
+
+.design-org-silos > strong {
+    position: absolute;
+    top: 50%;
+    left: -1.25rem;
+    right: -1.25rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    color: #fff;
+    background: #2d8a4e;
+    font-size: 1rem;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-align: center;
+    transform: translateY(-50%);
+}
+
+.design-org-silos > strong::before { content: '\2190'; }
+.design-org-silos > strong::after { content: '\2192'; }
 
 .role-of-design-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     border-bottom: 1px solid #e5e5e5;
+}
+
+.role-of-design-reasons-title {
+    margin: 0;
+    padding: 2.75rem 0 0.75rem;
+    font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
 }
 
 .role-of-design-grid article {
@@ -1835,7 +1996,7 @@ img {
     font-size: 0.72rem;
 }
 
-.role-of-design-grid h3 {
+.role-of-design-grid h4 {
     max-width: 16rem;
     margin: 0 0 0.8rem;
     font-size: 1.35rem;
@@ -1867,6 +2028,284 @@ img {
     border: 1px solid #eee;
     width: 100%;
     height: auto;
+}
+
+.platform-experience-visual {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+    padding: 0.55rem;
+    background: #f3f5f3;
+    border: 1px solid #e1e5e2;
+    border-radius: 8px;
+}
+
+.platform-experience-shot {
+    position: relative;
+    min-width: 0;
+    aspect-ratio: 16 / 6;
+    margin: 0;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e1e5e2;
+    border-radius: 5px;
+}
+
+.platform-experience-primary {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 8.25;
+}
+
+.product-area-image .platform-experience-shot img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.platform-experience-shot figcaption {
+    position: absolute;
+    left: 0.5rem;
+    bottom: 0.5rem;
+    padding: 0.2rem 0.4rem;
+    color: #fff;
+    background: rgba(17, 17, 17, 0.78);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 3px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.55rem;
+    line-height: 1.2;
+}
+
+.work-gallery-card {
+    position: relative;
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    background: #f2f4f2;
+    border: 1px solid #dfe4e1;
+    border-radius: 7px;
+}
+
+.product-area-image .work-gallery-card img,
+.work-media-grid .work-gallery-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.work-gallery-card figcaption {
+    position: absolute;
+    bottom: 0.65rem;
+    left: 0.65rem;
+    z-index: 2;
+    padding: 0.24rem 0.45rem;
+    color: #fff;
+    background: rgba(17, 17, 17, 0.78);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 3px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.56rem;
+    line-height: 1;
+    letter-spacing: 0.02em;
+}
+
+.work-expandable-image {
+    cursor: zoom-in;
+    transition: filter 160ms ease, opacity 160ms ease;
+}
+
+.work-expandable-image:hover {
+    filter: brightness(0.96);
+}
+
+.work-expandable-image:focus-visible {
+    outline: 3px solid #2d8a4e;
+    outline-offset: -3px;
+}
+
+.work-gallery-card:has(.work-expandable-image)::after {
+    content: "expand +";
+    position: absolute;
+    top: 0.65rem;
+    right: 0.65rem;
+    z-index: 2;
+    padding: 0.24rem 0.45rem;
+    color: #fff;
+    background: rgba(17, 17, 17, 0.78);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 3px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.52rem;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    pointer-events: none;
+}
+
+.offerwall-dashboard-crop {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+.offerwall-dashboard-crop img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.work-media-grid {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.work-media-grid .work-gallery-card {
+    aspect-ratio: 16 / 9;
+}
+
+.work-media-grid-single {
+    grid-template-columns: 1fr;
+}
+
+.work-media-grid-single .work-gallery-card {
+    aspect-ratio: 2.75 / 1;
+}
+
+.offerwall-rewards-gallery .work-gallery-card {
+    background: #111;
+    aspect-ratio: 2.8 / 1;
+    max-height: 10rem;
+}
+
+.offerwall-rewards-gallery .work-gallery-card img {
+    object-position: center;
+}
+
+.product-area-offerwall .offerwall-rewards-gallery {
+    grid-column: auto;
+    margin-top: 1.25rem;
+}
+
+.product-area-ad-formats .ad-format-gallery,
+.product-area-core-platform .platform-dashboard-gallery {
+    grid-column: 2;
+    margin-top: 0;
+}
+
+.product-area-ad-formats .ad-format-gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, 1fr) 7.5rem;
+    align-self: start;
+}
+
+.product-area-ad-formats .ad-format-gallery .work-gallery-card:first-child {
+    background: #111;
+    aspect-ratio: 16 / 9;
+}
+
+.product-area-ad-formats .ad-format-gallery .work-gallery-card:last-child {
+    aspect-ratio: auto;
+}
+
+.product-area-ad-formats .ad-format-gallery img {
+    object-fit: cover;
+}
+
+.product-area-core-platform .platform-dashboard-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1fr) 5.5rem;
+    height: 25rem;
+    align-self: start;
+}
+
+.product-area-core-platform .platform-dashboard-gallery .work-gallery-card {
+    aspect-ratio: auto;
+}
+
+.product-area-core-platform .platform-dashboard-gallery .work-gallery-card:first-child {
+    grid-column: 1 / -1;
+}
+
+.platform-dashboard-gallery .work-gallery-card img {
+    object-position: top center;
+}
+
+.work-lightbox {
+    width: min(94vw, 90rem);
+    max-width: none;
+    max-height: 94vh;
+    margin: auto;
+    padding: 3.25rem 1rem 1rem;
+    overflow: hidden;
+    color: #fff;
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    box-shadow: 0 28px 80px rgba(0,0,0,0.42);
+}
+
+.work-lightbox::backdrop {
+    background: rgba(10, 12, 11, 0.84);
+    backdrop-filter: blur(5px);
+}
+
+.work-lightbox figure {
+    display: grid;
+    place-items: center;
+    gap: 0.75rem;
+    margin: 0;
+}
+
+.work-lightbox img {
+    display: block;
+    max-width: 100%;
+    max-height: calc(94vh - 6.5rem);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.work-lightbox figcaption {
+    color: #ccc;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.72rem;
+    line-height: 1.4;
+}
+
+.work-lightbox-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.45rem 0.65rem;
+    color: #fff;
+    background: transparent;
+    border: 1px solid #555;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.72rem;
+    cursor: pointer;
+}
+
+.work-lightbox-close:hover {
+    border-color: #fff;
 }
 
 .unity-signup-visual {
@@ -1920,6 +2359,11 @@ img {
 
 .unity-signup-visual .unity-signup-welcome img {
     object-position: center 44%;
+}
+
+.unity-web-visual .unity-signup-routing img,
+.unity-web-visual .unity-signup-welcome img {
+    object-position: top center;
 }
 
 .unity-signup-shot figcaption {
@@ -2090,9 +2534,20 @@ img {
         grid-column: 1;
     }
 
+    .work-previous-heading {
+        grid-column: 1;
+    }
+
     .subpage-hero-detail h2 {
         max-width: 18ch;
         font-size: 2rem;
+    }
+
+    .work-current-note {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        margin-bottom: 2.25rem;
+        padding: 1.15rem;
     }
 
     .work-hero,
@@ -2136,13 +2591,14 @@ img {
         margin-bottom: 3rem;
     }
 
-    .role-of-design-thesis,
+    .role-of-design-intro,
     .role-of-design-grid {
         grid-template-columns: 1fr;
     }
 
-    .role-of-design-thesis {
-        gap: 1.25rem;
+    .role-of-design-intro {
+        gap: 2rem;
+        padding: 2.75rem 0;
     }
 
     .role-of-design-grid article {
@@ -2154,6 +2610,10 @@ img {
         border-left: 0;
         border-top: 1px solid #e5e5e5;
     }
+
+    .design-org-silos { min-height: 10rem; }
+    .design-org-silos > span { padding: 0.85rem 0.25rem; font-size: 0.56rem; }
+    .design-org-silos > strong { left: -0.6rem; right: -0.6rem; font-size: 0.82rem; }
 
     .work-unity-intro-grid {
         gap: 1rem;
@@ -2184,6 +2644,72 @@ img {
     .product-area-unity-web {
         padding-top: 3rem;
         padding-bottom: 3rem;
+    }
+
+    .platform-experience-visual {
+        gap: 0.4rem;
+        padding: 0.4rem;
+    }
+
+    .platform-experience-primary {
+        aspect-ratio: 16 / 9;
+    }
+
+    .platform-experience-shot:not(.platform-experience-primary) {
+        aspect-ratio: 16 / 7;
+    }
+
+    .work-media-grid {
+        grid-template-columns: 1fr;
+        gap: 0.55rem;
+    }
+
+    .work-media-grid-single .work-gallery-card {
+        aspect-ratio: 2 / 1;
+    }
+
+    .product-area-offerwall .offerwall-rewards-gallery,
+    .product-area-ad-formats .ad-format-gallery,
+    .product-area-core-platform .platform-dashboard-gallery {
+        grid-column: 1;
+    }
+
+    .offerwall-rewards-gallery .work-gallery-card {
+        aspect-ratio: 2.4 / 1;
+        max-height: 9rem;
+    }
+
+    .product-area-ad-formats .ad-format-gallery {
+        grid-template-rows: auto 6.5rem;
+    }
+
+    .product-area-core-platform .platform-dashboard-gallery {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-rows: minmax(0, 1fr) 4.75rem;
+        height: 19rem;
+    }
+
+    .work-gallery-card figcaption,
+    .unity-signup-shot figcaption {
+        top: auto;
+        bottom: 0.45rem;
+        left: 0.45rem;
+        font-size: 0.5rem;
+    }
+
+    .work-gallery-card:has(.work-expandable-image)::after {
+        top: 0.45rem;
+        right: 0.45rem;
+    }
+
+    .work-lightbox {
+        width: calc(100vw - 1rem);
+        max-height: calc(100vh - 1rem);
+        padding: 3rem 0.5rem 0.75rem;
+    }
+
+    .work-lightbox img {
+        max-height: calc(100vh - 6rem);
     }
 
     .leadership-framework-grid {

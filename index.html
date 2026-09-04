@@ -36,7 +36,7 @@
 <link rel="canonical" href="https://ryanboye.com/">
 
 <link rel="stylesheet" href="/css/main.css">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4">
 <link rel="alternate icon" type="image/png" href="/favicon.png">
 
 </head>
@@ -57,6 +57,9 @@
     --home-card-bg: #fff;
     --home-card-hover: #f5f5f5;
     --home-mono: 'JetBrains Mono', ui-monospace, monospace;
+    /* Portrait crop controls: first value is horizontal, second is vertical. */
+    --home-portrait-position: 50% 47%;
+    --home-portrait-position-mobile: 50% 42%;
   }
 
   body.home {
@@ -156,10 +159,11 @@
   }
   .home-portrait img {
     display: block; width: 100%; height: 100%;
-    object-fit: cover; object-position: 50% 47%;
+    object-fit: cover; object-position: var(--home-portrait-position);
   }
   .home-profile {
-    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     width: auto; margin: 0;
     border-bottom: 1px solid var(--home-border);
   }
@@ -180,6 +184,10 @@
   .home-profile h2 {
     max-width: none; margin: 0; color: #111; font-size: 2.45rem; line-height: 1.06;
     font-weight: 680; letter-spacing: -0.045em;
+  }
+  .home-profile-intro {
+    margin: 2rem 0 0; color: #555;
+    font-size: 0.86rem; line-height: 1.7;
   }
   .home-profile-column p {
     margin: 0 0 0.58rem; color: #555;
@@ -554,43 +562,112 @@
   @media (max-width: 700px) {
     .home-wrap { padding: 0 1.5rem; }
     .home-wrap-wide { padding: 0; width: calc(100% - 3rem); }
-    .home-hero-shell { width: calc(100% - 2rem); }
-    .home-hero { padding: 2.5rem 0 2rem; }
-    .home-bio { grid-template-columns: 1fr; height: auto; min-height: 45rem; }
-    .home-thesis { min-height: 26rem; padding: 2rem; }
-    .home-thesis h1 { font-size: clamp(2.7rem, 13vw, 3.3rem); }
-    .home-thesis-title { margin-top: 0.65rem; font-size: clamp(1.55rem, 7.4vw, 2rem); }
-    .home-thesis-copy { margin-top: 1.5rem; }
-    .home-thesis-proof { margin-top: 2.25rem; }
+    .home-hero-shell { width: calc(100% - 1rem); }
+    .home-hero { padding: 0.5rem 0 1.25rem; }
+    .home-feature {
+      border-radius: 6px;
+      box-shadow: 0 10px 32px rgba(18, 20, 18, 0.05);
+    }
+    .home-bio {
+      grid-template-columns: 1fr;
+      height: auto;
+      min-height: 0;
+      overflow: visible;
+    }
+    .home-thesis { min-height: 0; padding: 2.25rem 1.5rem 1.75rem; }
+    .home-thesis h1 {
+      font-size: clamp(2.75rem, 14vw, 3.35rem);
+      white-space: normal;
+    }
+    .home-thesis-title {
+      max-width: 11ch;
+      margin-top: 0.65rem;
+      font-size: clamp(1.65rem, 8vw, 2rem);
+      line-height: 1.03;
+      white-space: normal;
+    }
+    .home-thesis-copy {
+      margin-top: 1.6rem;
+      font-size: 0.98rem;
+      line-height: 1.62;
+    }
+    .home-thesis-proof { margin-top: 1.75rem; padding-top: 1.1rem; }
+    .home-thesis-proof span { font-size: 0.67rem; line-height: 1.55; }
+    .home-brand-marks { gap: 1.25rem; margin-top: 0.8rem; }
+    .home-brand-mark-cloudflare img { height: 2.05rem; }
+    .home-brand-mark-unity img { height: 1.55rem; }
     .home-profile { display: block; width: auto; margin: 0; }
-    .home-profile-title { padding: 2.25rem 2rem; border-bottom: 1px solid var(--home-border); }
+    .home-profile-title { padding: 2.1rem 1.5rem 1.9rem; border-bottom: 1px solid var(--home-border); }
     .home-profile-copy { display: block; }
-    .home-profile-column { padding: 2.25rem 2rem; }
-    .home-profile-column { border-left: 0; }
+    .home-profile-column { padding: 1.75rem 1.5rem 1.9rem; border-left: 0; }
     .home-profile-column + .home-profile-column { border-top: 1px solid var(--home-border); }
-    .home-profile h2 { max-width: none; font-size: 2rem; }
+    .home-profile h2 { max-width: none; font-size: 2.15rem; }
+    .home-profile-intro { margin-top: 1.25rem; font-size: 0.92rem; line-height: 1.66; }
     .home-portrait {
-      width: auto; min-height: 19.375rem; aspect-ratio: auto; margin: 0 1rem 1rem;
+      width: auto;
+      height: 21rem;
+      min-height: 0;
+      aspect-ratio: auto;
+      margin: 0 0.75rem 0.75rem;
     }
+    .home-portrait img { object-position: var(--home-portrait-position-mobile); }
     .home-hero-container { min-height: auto; }
-    .home-wave-canvas { width: 100%; height: 18rem; opacity: 0.18; }
-    .home-profile-column p { font-size: 0.92rem; }
-    .home-topics-grid { display: block; background-size: 25% 100%, 100% 25%; }
-    .home-topics-head,
-    .home-topic {
-      min-height: 13rem; margin: 0; padding: 2.25rem 2rem;
-      transform: none; border-width: 0 0 1px;
+    .home-wave-canvas { width: 100%; height: 16rem; opacity: 0.15; }
+    .home-profile-column p { font-size: 0.92rem; line-height: 1.66; }
+    .home-profile-column p + p { margin-top: 0.75rem; }
+    .home-topics-grid {
+      display: flex;
+      flex-direction: column;
+      background-size: 25% 100%, 100% 25%;
     }
-    .home-topics-head { min-height: 21rem; }
-    .home-topics h2 { max-width: 10ch; font-size: 2rem; }
-    .home-topic h3 { font-size: 1.5rem; }
-    .home-explore { padding: 2.75rem 2rem 3rem; }
+    .home-topics-head {
+      display: contents;
+      min-height: 0;
+      margin: 0;
+      transform: none;
+      border: 0;
+    }
+    .home-topics-head > div:first-child {
+      padding: 2.4rem 1.5rem 2rem;
+      background: #fbfbf8;
+      border-bottom: 1px solid #dde1dd;
+    }
+    .home-topics h2 { max-width: 12ch; font-size: 2.15rem; }
+    .home-topics-actions {
+      order: 5;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 0;
+      padding: 1.45rem 1.5rem 1.6rem;
+      background: #f6faf7;
+      border-top: 0;
+      border-bottom: 1px solid #d9ddda;
+    }
+    .home-topics-actions span { margin: 0; }
+    .home-topic {
+      display: grid;
+      grid-template-columns: 2.25rem minmax(0, 1fr);
+      gap: 0.75rem;
+      min-height: 0;
+      margin: 0;
+      padding: 1.6rem 1.5rem 1.75rem;
+      transform: none;
+      background: rgba(255, 255, 255, 0.76);
+      border-width: 0 0 1px;
+    }
+    .home-topic-two { background: #eff1ed; }
+    .home-topic-three { background: transparent; }
+    .home-topic h3 { max-width: none; font-size: 1.16rem; line-height: 1.22; }
+    .home-explore { padding: 2.6rem 1.5rem 2.8rem; }
     .home-explore-head { grid-template-columns: 1fr; gap: 1.25rem; margin-bottom: 2rem; }
-    .home-explore h2 { font-size: 2rem; }
-    .home-explore-link { grid-template-columns: 2.5rem 1fr auto; gap: 0.75rem; padding: 1.3rem 0; }
-    .home-explore-link strong { font-size: 1.05rem; }
+    .home-explore h2 { max-width: 11ch; font-size: 2.15rem; }
+    .home-explore-head p { font-size: 0.87rem; line-height: 1.62; }
+    .home-explore-link { grid-template-columns: 2rem 1fr auto; gap: 0.65rem; padding: 1.2rem 0; }
+    .home-explore-link strong { font-size: 1rem; line-height: 1.3; }
     .home-location {
-      padding: 1.5rem 2rem; align-items: flex-start;
+      padding: 1.4rem 1.5rem; align-items: flex-start;
       flex-direction: column; gap: 0.85rem;
     }
     .home-location-place { align-items: flex-start; }
@@ -634,7 +711,7 @@
   <header class="site-header">
   <nav aria-label="Primary navigation">
     <a class="nav-home" href="/">
-      <img class="nav-mark" src="/favicon.svg?v=2" alt="" width="64" height="64">
+      <img class="nav-mark" src="/favicon.svg?v=4" alt="" width="64" height="64">
       <span class="nav-home-label">Ryan Boye</span>
     </a>
     <div class="nav-links">
@@ -645,13 +722,13 @@
         <img src="/img/bmo-nav.png" alt="" width="936" height="1119">
       </a>
       <a class="nav-icon" href="https://linkedin.com/in/ryanboye" target="_blank" rel="noopener noreferrer" aria-label="Ryan Boye on LinkedIn">
-        <svg viewBox="0 0 32 32" aria-hidden="true">
-          <text x="16" y="24.5" fill="currentColor" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" text-anchor="middle">in</text>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M5.34 7.43a2.06 2.06 0 1 0 0-4.12 2.06 2.06 0 0 0 0 4.12ZM3.56 20.45h3.55V9H3.56v11.45ZM9.36 9v11.45h3.55v-5.67c0-1.49.28-2.94 2.14-2.94 1.82 0 1.85 1.71 1.85 3.04v5.57h3.55v-6.29c0-3.08-.66-5.45-4.27-5.45-1.73 0-2.89.95-3.37 1.85h-.05V9h-3.4Z"/>
         </svg>
       </a>
       <a class="nav-icon" href="mailto:hello@ryanboye.com" aria-label="Email Ryan Boye">
-        <svg viewBox="0 0 32 32" aria-hidden="true">
-          <path d="M3.5 6.5h25v19h-25zM4 7.25l12 9.5 12-9.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M2.75 5.25h18.5v13.5H2.75zM3.35 6l8.65 6.6L20.65 6" fill="none" stroke="currentColor" stroke-width="2.15" stroke-linecap="square" stroke-linejoin="miter"/>
         </svg>
       </a>
     </div>
@@ -693,21 +770,21 @@
 
         <section class="home-profile" aria-labelledby="home-profile-title">
           <div class="home-profile-title">
-            <div class="home-profile-eyebrow">// A short biography</div>
+            <div class="home-profile-eyebrow">// About me</div>
             <h2 id="home-profile-title">Hi, I'm Ryan.</h2>
           </div>
           <div class="home-profile-copy">
             <div class="home-profile-column">
-              <p>I was one of the first 100 employees at <a class="home-company-link" href="https://www.cloudflare.com/" target="_blank" rel="noopener noreferrer">Cloudflare</a>, where I helped make deeply technical performance and security products easier to understand and use, working across analytics, developer tools, and the broader product experience.</p>
-              <p>I've also advised more than a dozen early-stage startups, helping founders shape their products and better understand their customers. Some have since grown into Series B and C companies, while others have been acquired.</p>
+              <p>I’m a product and design leader based in Oakland, California. For nearly 20 years, I’ve worked at the edge of emerging technology, making complex products easier to understand and use.</p>
+              <p>I joined <a class="home-company-link" href="https://www.cloudflare.com/" target="_blank" rel="noopener noreferrer">Cloudflare</a> as one of its first 100 employees, helping make technical performance and security products accessible to a broader audience.</p>
             </div>
             <div class="home-profile-column">
-              <p>For the past seven years, I've been at <a class="home-company-link" href="https://unity.com/" target="_blank" rel="noopener noreferrer">Unity</a>. I joined as a Staff Designer and went on to lead design for its Grow business, which helps developers acquire users and monetize their games—and today represents the majority of Unity's revenue.</p>
-              <p>During Unity's turnaround, I also served on its L2 leadership staff, helping focus the business and put customers back at the center of our decisions.</p>
+              <p>For the past seven years, I’ve been at <a class="home-company-link" href="https://unity.com/" target="_blank" rel="noopener noreferrer">Unity</a>, most recently leading Product Design for Grow across advertising, monetization, and the core developer platform.</p>
+              <p>I built and led a team of 15 designers, and worked with the CEO and executive leadership to use Design and storytelling to reshape the business through a major turnaround.</p>
             </div>
             <div class="home-profile-column">
-              <p>Most recently, I joined <a class="home-company-link" href="https://unity.com/" target="_blank" rel="noopener noreferrer">Unity's</a> product team to take a more hands-on role. Today, I lead work exploring how AI can change the way games are created, including a web-based creation product I built and am taking to market.</p>
-              <p>That role brings together the things I care about most: understanding people, making complicated systems simpler, and building products that solve problems worth solving.</p>
+              <p>More recently, I moved into a hands-on role leading product for Unity’s next generation of agentic game development—from strategy and research through prototyping and development.</p>
+              <p>I’m passionate about building great teams, bringing Design into product and business strategy, and making powerful technology accessible to more people.</p>
             </div>
           </div>
         </section>
@@ -752,7 +829,6 @@
               <div class="home-explore-eyebrow">// Explore</div>
               <h2 id="home-explore-title">A little more about me.</h2>
             </div>
-            <p>Three places to start: how I lead, what my teams built at Unity, and how I help early-stage companies turn customer understanding into product direction.</p>
           </div>
 
           <nav class="home-explore-links" aria-label="Learn more about Ryan Boye">
@@ -774,15 +850,16 @@
           </nav>
         </section>
 
-        <div class="home-location">
-          <div class="home-location-place">
-            <svg class="home-oak-mark" viewBox="-278.1 -169.4 556.2 338.9" aria-hidden="true">
-              <use href="/img/oakland-logo.svg#_x7E__Tree_Black" xlink:href="/img/oakland-logo.svg#_x7E__Tree_Black" width="556.2" height="338.9" x="-278.1" y="-169.4"></use>
-            </svg>
-            <span>Made with love in Oakland, California.</span>
-          </div>
-          <span class="home-location-copyright">&copy; 2026 Ryan Boye</span>
-        </div>
+        <footer class="site-footer">
+  <div class="site-footer-place">
+    <svg class="site-footer-oak-mark" viewBox="-278.1 -169.4 556.2 338.9" aria-hidden="true">
+      <use href="/img/oakland-logo.svg#_x7E__Tree_Black" xlink:href="/img/oakland-logo.svg#_x7E__Tree_Black" width="556.2" height="338.9" x="-278.1" y="-169.4"></use>
+    </svg>
+    <span>Made with love in Oakland, California.</span>
+  </div>
+  <span class="site-footer-copyright">&copy; 2026 Ryan Boye</span>
+</footer>
+
         </div>
       </section>
     </div>
